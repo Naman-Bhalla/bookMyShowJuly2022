@@ -11,3 +11,10 @@ namanbhalla=# grant all privileges on database scaler_july22 to july22batch;
 GRANT
 namanbhalla=#
 ```
+
+
+// A (B) -> B will be taken from a DB
+// A (Database)
+// A has B
+// A(B b)
+// 
