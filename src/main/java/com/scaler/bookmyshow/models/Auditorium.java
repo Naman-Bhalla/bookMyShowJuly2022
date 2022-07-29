@@ -1,52 +1,29 @@
 package com.scaler.bookmyshow.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.util.List;
 
+// 1:M
+// 1:1
+
+@Entity
+@Getter
+@Setter
 public class Auditorium extends BaseModel {
     private String name;
+    @OneToMany
     private List<Seat> seats;
     private int capacity;
 
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<AuditoriumFeature> auditoriumFeatures;
+
+    // 1 A : 1 T
+    // M  A :   1 T
+    @ManyToOne
     private Theatre theatre;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public Theatre getTheatre() {
-        return theatre;
-    }
-
-    public void setTheatre(Theatre theatre) {
-        this.theatre = theatre;
-    }
-
-    public List<AuditoriumFeature> getAuditoriumFeatures() {
-        return auditoriumFeatures;
-    }
-
-    public void setAuditoriumFeatures(List<AuditoriumFeature> auditoriumFeatures) {
-        this.auditoriumFeatures = auditoriumFeatures;
-    }
 }

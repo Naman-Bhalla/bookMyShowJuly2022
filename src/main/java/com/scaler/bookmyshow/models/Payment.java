@@ -1,18 +1,25 @@
 package com.scaler.bookmyshow.models;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
+@Entity
 public class Payment extends BaseModel {
+    @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
     private Date timeOfPayment;
     private double amount;
     private String referenceId;
+    @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
+    //  1 : 1
+    //  M :  1
+    @ManyToOne
     private Ticket ticket;
 
-    public Payment(PaymentMethod paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
 
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;

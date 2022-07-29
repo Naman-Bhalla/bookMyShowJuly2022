@@ -1,7 +1,14 @@
 package com.scaler.bookmyshow.models;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+@Entity
 public class Seat extends BaseModel {
     private String seatNumber;
+
+    @Enumerated(EnumType.STRING)
     private SeatType seatType;
 
     public String getSeatNumber() {
