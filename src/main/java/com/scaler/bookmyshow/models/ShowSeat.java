@@ -44,3 +44,11 @@ public class ShowSeat extends BaseModel {
         this.state = state;
     }
 }
+
+// Make a booking
+// 0. Create a city
+// 1. Create a theatre
+// 2. Create a auditorium
+//    in the thetre with seats
+// 3. Create a Movie
+// 4. Create a Show

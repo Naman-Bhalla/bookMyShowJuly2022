@@ -1,7 +1,12 @@
 package com.scaler.bookmyshow.models;
 
+import org.hibernate.annotations.Fetch;
+import org.springframework.data.repository.cdi.Eager;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,7 +15,7 @@ public class City extends BaseModel {
 
 //    1 : M
 //    1  :  1
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Theatre> theatres;
 
     public String getName() {

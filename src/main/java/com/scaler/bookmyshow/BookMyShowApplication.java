@@ -1,8 +1,12 @@
 package com.scaler.bookmyshow;
 
+import com.scaler.bookmyshow.controllers.CityController;
+import com.scaler.bookmyshow.controllers.TheatreController;
 import com.scaler.bookmyshow.controllers.UserController;
 import com.scaler.bookmyshow.dtos.CreateUserRequestDto;
+import com.scaler.bookmyshow.models.Theatre;
 import com.scaler.bookmyshow.models.User;
+import com.scaler.bookmyshow.services.TheatreService;
 import com.scaler.bookmyshow.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,9 +22,17 @@ public class BookMyShowApplication implements CommandLineRunner {
 
 //    @Autowired
     private UserController userController;
+    private CityController cityController;
+    private TheatreController theatreController;
+
     @Autowired
-    public BookMyShowApplication(UserController userController) {
+    public BookMyShowApplication(UserController userController,
+                                 CityController cityController,
+                                 TheatreController theatreController
+    ) {
         this.userController = userController;
+        this.cityController = cityController;
+        this.theatreController = theatreController;
     }
 
     public static void main(String[] args) {
@@ -33,5 +45,11 @@ public class BookMyShowApplication implements CommandLineRunner {
         requestDto.setEmail("jayesh@scaler.com");
 
         this.userController.createUser(requestDto);
+        this.cityController.addCity("Chandigarh");
+        this.theatreController.createTheatre(
+                "PVR",
+                "ABC Road, Chandigarh",
+                1L
+        );
     }
 }

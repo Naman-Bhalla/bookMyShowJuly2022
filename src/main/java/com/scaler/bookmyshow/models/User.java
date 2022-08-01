@@ -1,5 +1,6 @@
 package com.scaler.bookmyshow.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -16,3 +17,5 @@ public class User extends BaseModel {
         this.email = email;
     }
 }
+
+// Will be starting at 9:10 PM
