@@ -52,3 +52,7 @@ public class ShowSeat extends BaseModel {
 //    in the thetre with seats
 // 3. Create a Movie
 // 4. Create a Show
+
+
+
+// Will start at 9: 10 PM

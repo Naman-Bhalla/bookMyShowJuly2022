@@ -1,16 +1,15 @@
 package com.scaler.bookmyshow.repositories;
 
-import com.scaler.bookmyshow.models.User;
+import com.scaler.bookmyshow.models.Show;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends
-        JpaRepository<User, Long> {
+public interface ShowRepository
+extends JpaRepository<Show, Long> {
 
-    User save(User user);
 
-    Optional<User> findById(Long id);
+    Optional<Show> findById(Long id);
 }

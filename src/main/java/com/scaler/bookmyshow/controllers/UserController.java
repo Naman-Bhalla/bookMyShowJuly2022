@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class UserController {
-    @Qualifier("mango")
+//    @Qualifier("mango")
     private UserService userService;
 
     @Autowired
