@@ -18,7 +18,7 @@ extends JpaRepository<ShowSeat, Long> {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @QueryHints({
-            @QueryHint(name = "javax.persistence.lock.timeout", value = "0")
+            @QueryHint(name = "javax.persistence.lock.timeout", value = "30000")
     })
     List<ShowSeat> findByIdIn(List<Long> showSeatIds);
     // select * from show_seats

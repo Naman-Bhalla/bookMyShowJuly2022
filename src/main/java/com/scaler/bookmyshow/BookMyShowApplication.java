@@ -82,10 +82,23 @@ public class BookMyShowApplication implements CommandLineRunner {
                 Language.ENGLISH
         );
 
-        this.ticketController.bookTicket(
+        TicketBookRunner ticketBookRunner1 = new TicketBookRunner(
+                this.ticketController,
                 3L,
-                List.of(44L, 45L, 46L),
+                List.of(58L, 59L, 60L),
                 1L
         );
+
+        TicketBookRunner ticketBookRunner2 = new TicketBookRunner(
+                this.ticketController,
+                3L,
+                List.of(60L, 61L, 62L),
+                1L
+        );
+
+        Thread t1 = new Thread(ticketBookRunner1);
+        Thread t2 = new Thread(ticketBookRunner2);
+        t1.start();
+        t2.start();
     }
 }
